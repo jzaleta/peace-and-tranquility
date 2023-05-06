@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+marquee {
+  height: 100vh;
+}
+
 @keyframes colored-background {
   0% {
     background-color: #8b1c86;
