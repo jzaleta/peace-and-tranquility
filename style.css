@@ -10,6 +10,16 @@ body {
   animation: colored-background linear 12s infinite;
 }
 
+img {
+  width: 50%;
+  animation: transition-in ease-in-out 3s;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
 @keyframes colored-background {
   0% {
     background-color: #8b1c86;
@@ -113,10 +123,4 @@ body {
   .phrase-box {
     font-size: 3em;
   }
-}
-
-img {
-  width: 50%;
-  animation: transition-in ease-in-out 3s;
-  cursor: pointer;
 }
