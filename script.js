@@ -24,7 +24,7 @@ const phrases = [
     document.querySelector("body").classList.add("colored-background");
   
     const danceImage = document.createElement("img");
-    danceImage.src = "";
+    danceImage.src = "https://cloud-qttvokohb-hack-club-bot.vercel.app/0dino.gif";
     document.querySelector(".container").appendChild(danceImage);
   
     const phraseBox = document.createElement("p");
