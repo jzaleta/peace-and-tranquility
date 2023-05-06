@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+body {
+  background-color: #222;
+  animation: none;
+}
+
+.colored-background {
+  transition: background-color 1000ms linear;
+  animation: colored-background linear 12s infinite;
+}
+
+@keyframes colored-background {
+  0% {
+    background-color: #8b1c86;
+  }
+  20% {
+    background-color: rgb(29, 28, 121);
+  }
+  40% {
+    background-color: rgb(48, 153, 44);
+  }
+  60% {
+    background-color: rgb(170, 148, 51);
+  }
+  80% {
+    background-color: rgb(168, 44, 39);
+  }
+  100% {
+    background-color: #8b1c86;
+  }
+}
+
+@keyframes transition-in {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vcr-overlay {
+  background: url("https://cloud-9vt5xw0yo-hack-club-bot.vercel.app/0overlay.gif");
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.begin {
+  font-size: 2em;
+  font-family: "VT323", monospace;
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+}
+
+.flicker-text {
+  animation-duration: 0.01s;
+  animation-name: textflicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.phrase-box {
+  font-family: "VT323", monospace;
+  color: white;
+  font-weight: bold;
+  /* animation: transition-in ease-in-out 3s; */
+}
+
+@media (max-width: 300px) {
+  .phrase-box {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 500px) {
+  .phrase-box {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 700px) {
+  .phrase-box {
+    font-size: 3em;
+  }
+}
+
+img {
+  width: 50%;
+  animation: transition-in ease-in-out 3s;
+  cursor: pointer;
+}
