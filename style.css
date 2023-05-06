@@ -21,7 +21,6 @@ a {
 }
 
 .button {
-  background-color: black;
   color: black;
   padding: 10px 20px;
   border: none;
@@ -31,7 +30,6 @@ a {
   font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 @keyframes colored-background {
