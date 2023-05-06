@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const dvd = document.getElementById("dvd");
   let intervalId;
   let xIncr = 1;
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function init() {
     updateColor();
     dvd.style.position = "absolute";
-    document.body.style.background = "#4d4d4d";
+    document.body.style.background = "#0a0a0a";
     intervalId = setInterval(frame, 5);
   }
 
