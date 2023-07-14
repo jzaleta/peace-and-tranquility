@@ -1,63 +1,48 @@
 import './style.css';
+import { dancin, start, updatePhrase } from './dancin.js';
 
-const phrases = [
-  "No one is around to help",
-  "Life is hard, life is stressful",
-  "I need peace and tranquility",
-  "I don't have to prove myself to anyone",
-];
-let phraseIndex = 0;
+// Notes so I don't forget what does this code do:
+// Create a div with class "container"
+const containerDiv = document.createElement('div');
+containerDiv.className = 'container';
 
-const start = () => {
-  const audio = document.createElement("audio");
-  audio.src = "music/dancin.mp3";
-  audio.loop = true;
-  document.querySelector(".container").appendChild(audio);
-  audio.style = "visibility: hidden;";
-  audio.play();
+// Create a span with the class "begin glitch" 
+const beginSpan = document.createElement('span');
+beginSpan.className = 'begin glitch';
+beginSpan.setAttribute('data-text', 'Begin (with audio)');
+beginSpan.textContent = 'Begin (with audio)';
+containerDiv.appendChild(beginSpan);
 
-  // toggle audio on click
-  const toggleAudio = () => {
-    audio.paused ? audio.play() : audio.pause();
-  };
+// Create a div with the class "button"
+const buttonDiv = document.createElement('div');
+buttonDiv.className = 'button';
 
-  document.querySelector(".begin").remove();
+// Create a span with class "begin glitch" and set the data-text attribute
+const ejectSpan = document.createElement('span');
+ejectSpan.className = 'begin glitch';
+ejectSpan.setAttribute('data-text', 'EJECT?');
 
-  document.querySelector("body").classList.add("colored-background");
+// Create an anchor element with href to "eject.html" and set its text content
+// Remember to link eject.html later
+const ejectLink = document.createElement('a');
+ejectLink.href = 'eject.html';
+ejectLink.textContent = 'EJECT?';
+ejectSpan.appendChild(ejectLink);
+buttonDiv.appendChild(ejectSpan);
 
-  const danceImage = document.createElement("img");
-  danceImage.src = "https://cloud-qttvokohb-hack-club-bot.vercel.app/0dino.gif";
-  document.querySelector(".container").appendChild(danceImage);
+// Create a div element with the class "vcr-overlay"
+const overlayDiv = document.createElement('div');
+overlayDiv.className = 'vcr-overlay';
 
-  const phraseBox = document.createElement("p");
-  phraseBox.classList.add("phrase-box");
-  phraseBox.classList.add("flicker-text");
-  document.querySelector(".container").appendChild(phraseBox);
-  phraseBox.innerText = " ";
+// Append the created elements to the body or any other desired element
+document.body.appendChild(containerDiv);
+document.body.appendChild(buttonDiv);
+document.body.appendChild(overlayDiv);
 
-  setTimeout(() => {
-    phraseBox.innerText = phrases[phraseIndex];
-    setInterval(updatePhrase, 6000);
-  }, 2000);
 
-  danceImage.onclick = toggleAudio;
-};
-
-const updatePhrase = () => {
-  phraseIndex = (phraseIndex + 1) % phrases.length;
-  document.querySelector(".phrase-box").innerText = phrases[phraseIndex];
-};
-
+document.querySelector('.begin').onclick = start;
 window.onload = () => {
-  if (window.location.hash != "") {
+  if (window.location.hash != '') {
     start();
   }
 };
-
-document.querySelector(".begin").onclick = start;
-
-console.log(
-  "%c Created by Javier Zaleta Martínez ",
-  "color: #fff; background: hsl(0, 93%, 45%); padding: 5px 0;"
-);
-console.log();
