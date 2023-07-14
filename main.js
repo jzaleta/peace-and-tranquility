@@ -48,11 +48,12 @@ const updatePhrase = () => {
   document.querySelector(".phrase-box").innerText = phrases[phraseIndex];
 };
 
-document.onload = () => {
+window.onload = () => {
   if (window.location.hash != "") {
-    start;
+    start();
   }
 };
+
 document.querySelector(".begin").onclick = start;
 
 console.log(
