@@ -1,62 +1,59 @@
 import './style.css';
-import { music, phrases } from './dancin.js';
-import { startDVDAnimation } from './eject.js';
 
-document.addEventListener("DOMContentLoaded", function () {
-  startDVDAnimation();
-});
+const phrases = [
+  "No one is around to help",
+  "Life is hard, life is stressful",
+  "I need peace and tranquility",
+  "I don't have to prove myself to anyone",
+];
+let phraseIndex = 0;
 
-music();
+const start = () => {
+  const audio = document.createElement("audio");
+  audio.src = "music/dancin.mp3";
+  audio.loop = true;
+  document.querySelector(".container").appendChild(audio);
+  audio.style = "visibility: hidden;";
+  audio.play();
 
-const containerDiv = document.createElement('div');
-containerDiv.classList.add('container');
+  // toggle audio on click
+  const toggleAudio = () => {
+    audio.paused ? audio.play() : audio.pause();
+  };
 
-const beginSpan = document.createElement('span');
-beginSpan.classList.add('begin', 'glitch');
-beginSpan.setAttribute('data-text', 'Begin (with audio)');
-beginSpan.innerText = 'Begin (with audio)';
-containerDiv.appendChild(beginSpan);
+  document.querySelector(".begin").remove();
 
-document.body.appendChild(containerDiv);
+  document.querySelector("body").classList.add("colored-background");
 
-const buttonDiv = document.createElement('div');
-buttonDiv.classList.add('button');
+  const danceImage = document.createElement("img");
+  danceImage.src = "https://cloud-qttvokohb-hack-club-bot.vercel.app/0dino.gif";
+  document.querySelector(".container").appendChild(danceImage);
 
-const ejectSpan = document.createElement('span');
-ejectSpan.classList.add('begin', 'glitch');
-ejectSpan.setAttribute('data-text', 'EJECT?');
+  const phraseBox = document.createElement("p");
+  phraseBox.classList.add("phrase-box");
+  phraseBox.classList.add("flicker-text");
+  document.querySelector(".container").appendChild(phraseBox);
+  phraseBox.innerText = " ";
 
-const ejectLink = document.createElement('a');
-ejectLink.setAttribute('href', 'eject.html');
-ejectLink.innerText = 'EJECT?';
-ejectSpan.appendChild(ejectLink);
+  setTimeout(() => {
+    phraseBox.innerText = phrases[phraseIndex];
+    setInterval(updatePhrase, 6000);
+  }, 2000);
 
-buttonDiv.appendChild(ejectSpan);
+  danceImage.onclick = toggleAudio;
+};
 
-document.body.appendChild(buttonDiv);
+const updatePhrase = () => {
+  phraseIndex = (phraseIndex + 1) % phrases.length;
+  document.querySelector(".phrase-box").innerText = phrases[phraseIndex];
+};
 
-const vcrOverlayDiv = document.createElement('div');
-vcrOverlayDiv.classList.add('vcr-overlay');
-
-document.body.appendChild(vcrOverlayDiv);
-
-const importScript = document.createElement('script');
-importScript.setAttribute('type', 'module');
-importScript.innerHTML = `
-import { getPhrase } from './dancin.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-  const phraseBox = document.createElement('p');
-  phraseBox.classList.add('phrase-box');
-  document.querySelector('.container').appendChild(phraseBox);
-
-  setInterval(() => {
-    phraseBox.innerText = getPhrase();
-  }, 6000);
-});
-`;
-
-document.body.appendChild(importScript);
+document.onload = () => {
+  if (window.location.hash != "") {
+    start;
+  }
+};
+document.querySelector(".begin").onclick = start;
 
 console.log(
   "%c Created by Javier Zaleta Martínez ",
