@@ -1,20 +1,12 @@
-const phrases = [
-  "No one is around to help",
-  "Life is hard, life is stressful",
-  "I need peace and tranquility",
-  "I don't have to prove myself to anyone",
-];
-let phraseIndex = 0;
-
-const start = () => {
+export const music = () => {
   const audio = document.createElement("audio");
   audio.src = "/dancin.mp3";
   audio.loop = true;
   document.querySelector(".container").appendChild(audio);
-  audio.style = "visibility: hidden;";
+  audio.style.visibility = "hidden";
   audio.play();
 
-  // toggle audio on click
+  // Toggle audio on click
   const toggleAudio = () => {
     audio.paused ? audio.play() : audio.pause();
   };
@@ -41,20 +33,32 @@ const start = () => {
   danceImage.onclick = toggleAudio;
 };
 
+export const phrases = [
+  "No one is around to help",
+  "Life is hard, life is stressful",
+  "I need peace and tranquility",
+  "I don't have to prove myself to anyone",
+];
+
+export const getPhrase = () => {
+  return phrases[phraseIndex];
+};
+
+let phraseIndex = 0;
+
 const updatePhrase = () => {
   phraseIndex = (phraseIndex + 1) % phrases.length;
-  document.querySelector(".phrase-box").innerText = phrases[phraseIndex];
+  document.querySelector(".phrase-box").innerText = getPhrase();
 };
 
-document.onload = () => {
-  if (window.location.hash != "") {
-    start;
+const start = () => {
+  music();
+};
+
+window.onload = () => {
+  if (window.location.hash !== "") {
+    start();
   }
 };
-document.querySelector(".begin").onclick = start;
 
-console.log(
-  "%c Created by Javier Zaleta Martínez ",
-  "color: #fff; background: hsl(0, 93%, 45%); padding: 5px 0;"
-);
-console.log();
+document.querySelector(".begin").onclick = start;
