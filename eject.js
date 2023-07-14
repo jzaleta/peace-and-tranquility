@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+export function startDVDAnimation() {
   const dvd = document.getElementById("dvd");
   let intervalId;
   let xIncr = 1;
@@ -41,4 +41,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   init();
-});
+}
