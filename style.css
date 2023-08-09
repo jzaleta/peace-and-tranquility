@@ -73,6 +73,12 @@ a {
   }
 }
 
+.dancin {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
