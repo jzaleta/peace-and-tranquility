@@ -39,6 +39,7 @@ const overlayDiv = document.createElement('div');
 overlayDiv.className = 'vcr-overlay';
 
 // Append the created elements to the body or any other desired element
+document.body.appendChild(cornerDiv);
 document.body.appendChild(containerDiv);
 document.body.appendChild(buttonDiv);
 document.body.appendChild(overlayDiv);
