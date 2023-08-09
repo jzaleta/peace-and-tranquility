@@ -2,6 +2,10 @@ import './style.css';
 import { dancin, start, updatePhrase } from './dancin.js';
 
 // Notes so I don't forget what does this code do:
+
+const containerDiv = document.createElement('div');
+containerDiv.className = 'corner';
+
 // Create a div with class "container"
 const containerDiv = document.createElement('div');
 containerDiv.className = 'container';
