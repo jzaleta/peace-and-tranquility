@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
-body {
+:root {
   background-color: #222;
   animation: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
 }
 
 .colored-background {
