@@ -1,5 +1,6 @@
 import './style.css';
 import { dancin, start, updatePhrase } from './dancin.js';
+import { startDVDAnimation } from './eject.js';
 
 document.querySelector('.begin').onclick = start;
 window.onload = () => {
@@ -7,6 +8,8 @@ window.onload = () => {
     start();
   }
 };
+
+startDVDAnimation();
 
 console.log(
   "%c Created by Javier Zaleta Martínez ",
