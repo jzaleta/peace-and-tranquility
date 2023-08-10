@@ -1,3 +1,7 @@
+// You just ejected this site, there's nothing else to do here.
+// As you reflect on the reasons behind your actions;
+// take a moment to explore this now forgotten code snippet:
+
 export function startDVDAnimation() {
   const dvd = document.getElementById("dvd");
   let intervalId;

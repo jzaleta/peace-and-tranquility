@@ -1,7 +1,15 @@
 {
   "name": "peace-and-tranquility",
+  "version": "1.0.0",
+  "description": "I need peace and tranquility.",
+  "author": "Javier Zaleta Martínez",
+  "license": "MIT",
+  "keywords": [
+    "peace",
+    "tranquility",
+    "dancin"
+  ],
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
