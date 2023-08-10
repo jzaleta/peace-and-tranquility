@@ -2,15 +2,15 @@
 
 :root {
   background-color: #222;
-  width: 100%;
-  height: 100%;
-  margin: 0;
   overflow: hidden;
 }
 
 body {
   background-color: #222;
   animation: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .colored-background {
