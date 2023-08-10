@@ -2,12 +2,21 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/jzaleta/peace-and-tranquility?color=red)
 ![GitHub language count](https://img.shields.io/github/languages/count/jzaleta/peace-and-tranquility)
-![GitHub license](https://img.shields.io/github/license/jzaleta/peace-and-tranquility)
-![GitHub repo stars](https://img.shields.io/github/stars/jzaleta/peace-and-tranquility?style=social)
 
 I need [peace and tranquility](https://peace-and-tranquility.vercel.app).
 
-> Inspired and adapted from: https://github.com/maxwofford/peace-and-tranquility
+> Inspired and adapted from: [maxwofford/peace-and-tranquility](https://github.com/maxwofford/peace-and-tranquility).
+
+<!-- BADGES -->
+<div align="center">
+  
+![Stars](https://img.shields.io/github/stars/jzaleta/peace-and-tranquility?style=for-the-badge&logo=starship&color=9ece6a&logoColor=D9E0EE&labelColor=1A1B26)
+![License](https://img.shields.io/github/license/jzaleta/peace-and-tranquility?style=for-the-badge&logo=starship&color=%23e0af68&logoColor=D9E0EE&labelColor=1A1B26)
+![Repo Size](https://img.shields.io/github/repo-size/jzaleta/peace-and-tranquility?style=for-the-badge&logo=codesandbox&color=FCA2AA&logoColor=D9E0EE&labelColor=1A1B26)
+
+</div>
+
+---
 
 ## 🔎 About
 ![](assets/dancin.png)
